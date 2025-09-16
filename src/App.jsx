@@ -1,5 +1,5 @@
 import React from 'react'
-import Menubar from './menubar'
+import Menubar from './Menubar';
 function App() {
   return (
    <>

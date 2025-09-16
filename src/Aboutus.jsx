@@ -14,39 +14,10 @@ export default function Aboutus() {
 
       {/* Hero Section */}
       <div className="aboutus-hero text-center text-dark py-5 mb-4 container-fluid-back">
-        <h1 className="display-4 text-gradient fw-bold">About Us</h1>
+        <h1 className="display-4 text-dark fw-bold">About Us</h1>
         <p className="lead">Freshness Delivered. Quality You Can Trust.</p>
       </div>
-
-      {/* About Me Section (After Hero) */}
-      <div className=" container-fluid-back about-me py-5">
-        <div className="row align-items-center">
-          <div className="col-md-4 mb-4">
-            <img
-              src="/images/owner.jpg" 
-              alt="Owner"
-              className="img-fluid rounded-circle shadow-lg"
-            />
-          </div>
-          <div className="col-md-8">
-            <h2 className="fw-bold text-gradient mb-3">About Me</h2>
-            <p className="mysection">
-              Hello! I am <strong>Teju</strong>, the founder of this website. My passion is 
-              to connect people with fresh, healthy, and high-quality groceries 
-              directly from trusted farmers. I started this journey with a vision 
-              to make organic and farm-fresh products accessible to everyone.
-            </p>
-            <p className="mysection">
-              Over the years, we’ve built strong relationships with suppliers, 
-              ensuring that every product you receive is packed with care, flavor, 
-              and freshness.
-            </p>
-          </div>
-        </div>
-      </div>
-
       {/* Story Section */}
-      <div className="">
       <div className=" py-5 mb-4">
         <div className="row align-items-center">
           <div className="col-md-6 mb-4">
@@ -67,7 +38,6 @@ export default function Aboutus() {
             </p>
           </div>
         </div>
-      </div>
       </div>
 
       {/* Mission & Values */}
@@ -124,6 +94,32 @@ export default function Aboutus() {
                 <p>Certified organic products to keep you healthy.</p>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      {/* About Me Section (After Hero) */}
+      <div className=" container-fluid-back about-me py-5 mb-5">
+        <div className="row align-items-center">
+          <div className="col-md-2  mb-4">
+            <img
+              src="Images\tejuphoto.jpg" 
+              alt="Owner"
+              className="img-fluid rounded-circle shadow-lg"
+            />
+          </div>
+          <div className="col-md-8">
+            <h2 className="fw-bold text-gradient mb-3">About Me</h2>
+            <p className="mysection">
+              Hello! I am <strong>Teju</strong>, the founder of this website. My passion is 
+              to connect people with fresh, healthy, and high-quality groceries 
+              directly from trusted farmers. I started this journey with a vision 
+              to make organic and farm-fresh products accessible to everyone.
+            </p>
+            <p className="mysection">
+              Over the years, we’ve built strong relationships with suppliers, 
+              ensuring that every product you receive is packed with care, flavor, 
+              and freshness.
+            </p>
           </div>
         </div>
       </div>

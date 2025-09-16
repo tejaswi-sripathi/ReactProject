@@ -23,7 +23,8 @@ import { configureStore, createSlice } from "@reduxjs/toolkit";
       { id: 1007, name: "Squids", price: 350, imageurl: 'https://www.bbassets.com/media/uploads/p/l/10000967_8-fresho-squid-medium-without-head-15-20-pcs.jpg', description: "Soft squid meat, great for frying or seafood dishes." },
        { id: 1008, name: "Eggs", price: 70, imageurl: 'https://img.freepik.com/free-psd/raw-eggs-arrangement_23-2151864152.jpg?semt=ais_hybrid&w=740', description: "Farm-fresh eggs, rich in protein and essential nutrients." }
        ], 
-dairy: [ { id: 1, name: "Cream", price: 200, imageurl: 'https://png.pngtree.com/png-clipart/20241206/original/pngtree-cream-cheese-isolated-on-white-transparent-background-png-image_17626481.png', description: "Thick, fresh cream, perfect for desserts and cooking." },
+dairy: [ 
+  { id: 1, name: "Cream", price: 200, imageurl: 'https://png.pngtree.com/png-clipart/20241206/original/pngtree-cream-cheese-isolated-on-white-transparent-background-png-image_17626481.png', description: "Thick, fresh cream, perfect for desserts and cooking." },
    { id: 2, name: "Junnu", price: 180, imageurl: 'https://static.vecteezy.com/system/resources/previews/016/283/182/large_2x/kharvas-or-cheek-chik-bari-pis-or-junnu-is-a-sweet-dairy-product-made-from-bovine-colostrum-free-photo.jpg', description: "Traditional South Indian milk pudding, soft and creamy." }, 
    { id: 3, name: "Milk", price: 50, imageurl: 'https://hips.hearstapps.com/hmg-prod/images/milk-6819e7e4c3689.jpg?crop=0.667xw:1.00xh;0.167xw,0&resize=1200:*', description: "Fresh cow milk, rich in calcium and protein." }, 
    { id: 4, name: "Whey", price: 120, imageurl: 'https://rhbulk.com/cdn/shop/files/RHBulk_Whey-Protein-Concentrate-80_-Protein_Angle_E0A0751_f40bbdd2-aa23-4968-8d1f-083361f4ce7f.jpg?v=1720894719&width=1946', description: "Protein-rich liquid obtained from curdling milk." },
@@ -153,34 +154,47 @@ const ordersSlice = createSlice({
          } 
         }
        });
+        // Load all persisted data from localStorage in one go
+const persistedData = {
+  users: JSON.parse(localStorage.getItem("users")) || [],
+  currentUser: JSON.parse(localStorage.getItem("currentUser")) || null,
+  isAuthenticated: localStorage.getItem("isAuthenticated") === "true" || false,
+  cart: JSON.parse(localStorage.getItem("cart")) || [],
+  orders: JSON.parse(localStorage.getItem("orders")) || []
+};
         const userAuthSlice = createSlice({
            name: "userAuth",
-            initialState: { users: [], isAuthenticated: false, currentUser: null },
+            initialState:  {
+               users: persistedData.users,
+              currentUser: persistedData.currentUser,
+             isAuthenticated: persistedData.isAuthenticated
+            },
              reducers: {
-               registerUser(state, action) 
-               { 
+               registerUser(state, action) { 
                 state.users.push(action.payload);
-               },
-                loginUser(state, action)
-                 { 
-                  const { username, password } = action.payload; 
-                  const user = state.users.find( (u) => u.username === username && u.password === password ); 
-                  if (user)
-                    { 
-                      state.currentUser = user; 
-                      state.isAuthenticated = true;
-                     } 
-                     else 
-                      {
-                         state.currentUser = null; 
-                         state.isAuthenticated = false; 
-                        } 
-                      },
-     logoutUser(state) 
-     { 
-      state.currentUser = null;
-       state.isAuthenticated = false;
-       } 
+           localStorage.setItem("users", JSON.stringify(state.users)); // persist users
+              },
+                loginUser(state, action) { 
+  const { username, password } = action.payload; 
+  const user = state.users.find(u => 
+      (u.username === username || u.email === username) && u.password === password
+  ); 
+  if (user) { 
+    state.currentUser = user; 
+    state.isAuthenticated = true; 
+    localStorage.setItem("currentUser", JSON.stringify(user));
+    localStorage.setItem("isAuthenticated", "true");
+  } else {
+    state.currentUser = null; 
+    state.isAuthenticated = false;
+  } 
+},
+    logoutUser(state) { 
+  state.currentUser = null; 
+  state.isAuthenticated = false;
+  localStorage.removeItem("currentUser");
+  localStorage.setItem("isAuthenticated", "false");
+}
       } 
     });
 export const { registerUser, loginUser, logoutUser } = userAuthSlice.actions; 
@@ -197,4 +211,5 @@ const store = configureStore({
        userAuth: userAuthSlice.reducer
   }
  });
+
  export default store

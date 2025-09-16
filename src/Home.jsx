@@ -9,7 +9,7 @@ export default function Home() {
 
   const sections = [
     { title: "Fresh Vegetables", desc: "Organic and farm-fresh vegetables delivered to your doorstep.", img: "/carouselimages/Vegetables-.jpg", link: "/veg" },
-    { title: "Dairy Products", desc: "Milk, cheese, butter, and more directly from local farms.", img: "/carouselimages/dairyproducts.jpg", link: "/dairy" },
+    { title: "Dairy Products", desc: "Milk, cheese, butter, and more directly from local farms.", img: "/carouselimages/dairyproducts.jpg", link: "/dairyproducts" },
     { title: "Dry Fruits", desc: "Premium quality almonds, cashews, raisins, and more.", img: "/carouselimages/dryfruits.webp", link: "/nutsandseeds" },
     { title: "Fruits", desc: "Seasonal and exotic fruits hand-picked for you.", img: "/carouselimages/fruits.jpg", link: "/fruits" },
     { title: "Seafood", desc: "Fresh fish, prawns, and other seafood delivered hygienically.", img: "/carouselimages/seafood.jpg", link: "/meatandseafood" },
@@ -140,7 +140,7 @@ export default function Home() {
             <div className="col-md-4 mb-4">
               <h5>Contact</h5>
               <p>Email: support@farmtohome.com</p>
-              <p>Phone: +91 98765 43210</p>
+              <p>Phone: +91 7032129199</p>
               <p>Location: Hyderabad, India</p>
             </div>
           </div>

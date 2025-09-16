@@ -24,7 +24,10 @@ function Login() {
     }
 
     // Find user
-    const matchedUser = users.find(u => u.username === email && u.password === password);
+    const matchedUser = users.find(
+            u => (u.email === email || u.username === email) && u.password === password
+         );
+
 
     if (matchedUser) {
       dispatch(loginUser({ username: email, password })); // update Redux + localStorage
@@ -42,18 +45,21 @@ function Login() {
         {error && <p className="error-text">{error}</p>}
 
         <form onSubmit={handleLogin}>
-          <input
-            type="email"
-            ref={emailRef}
+         <input
+             type="email"
+             ref={emailRef}
             className="input-field"
-            placeholder="Email"
-          />
-          <input
-            type="password"
-            ref={passwordRef}
-            className="input-field"
-            placeholder="Password"
-          />
+             placeholder="Email"
+             onChange={() => setError("")}  //to disapper error messages
+             />
+           <input
+             type="password"
+              ref={passwordRef}
+              className="input-field"
+              placeholder="Password"
+              onChange={() => setError("")}  //to disapper error messages
+                   />
+
           <button type="submit" className="submit-btn">Login</button>
         </form>
 

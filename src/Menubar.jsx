@@ -9,16 +9,16 @@ import NonVeg from "./MeatSeafood";
 import DairyProducts from "./DairyProducts";
 import Fruits from "./Fruits";
 import Orders from "./Orders";
-import Aboutus from "./Aboutus";
 import Contact from "./Contact";
 import NotFound from "./NotFound";
 import Cart from "./Cart";
 import Nutsseeds from "./Nutsseeds";
 import Login from "./Login";
-import Signup from "./Signup";
 import SearchResults from "./SearchResults";
+import SignUp from "./SignUp";
 
 import "./menubar.css";
+import Aboutus from "./Aboutus";
 
 function Navbar() {
   const cartItems = useSelector((state) => state.cart);
@@ -131,10 +131,10 @@ function AppRoutes() {
           <Route path="/nutsandseeds" element={<Nutsseeds />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/orders" element={<Orders />} />
-          <Route path="/aboutus" element={<Aboutus />} />
+          <Route path="/aboutus" element={<Aboutus/>} />
           <Route path="/contactus" element={<Contact />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/signup" element={<SignUp/>} />
           <Route path="/search" element={<SearchResults />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

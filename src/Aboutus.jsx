@@ -2,7 +2,7 @@ import React from "react";
 import "./aboutus.css";
 import { useNavigate } from "react-router-dom";
 
-export default function AboutUs() {
+export default function Aboutus() {
 
   const navigate = useNavigate();
   const goToContact = () => {

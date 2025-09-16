@@ -6,7 +6,7 @@ import "./signup.css";
 import { useDispatch } from "react-redux";
 import { registerUser } from "./store"; // ✅ Use registerUser here
 
-function Signup() {
+function SignUp() {
   const {
     register,
     handleSubmit,
@@ -158,4 +158,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default SignUp;

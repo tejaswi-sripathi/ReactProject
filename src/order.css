@@ -1,0 +1,133 @@
+/* Gradient title */
+/* Responsive grid - 4 cards per row */
+.orders-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards in a row */
+  gap: 20px;
+}
+
+/* Gradient title */
+.text-gradient {
+  background: linear-gradient(90deg, #ff6a00, #ee0979);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  text-align: center;   /* center heading */
+  margin: 0 auto 25px;  /* keep it centered */
+}
+
+
+/* Responsive grid - 3 cards per row */
+.orders-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards in a row */
+  gap: 20px;
+}
+
+@media (max-width: 992px) {
+  .orders-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .orders-grid {
+    grid-template-columns: 1fr; /* 1 card per row on mobile */
+  }
+}
+
+/* Order Card */
+.order-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(129, 49, 49, 0.05);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.order-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.order-title {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Date */
+.order-date {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 5px;
+}
+
+/* Price (Total) */
+.order-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #198754;
+  margin-top: auto;
+  text-align: center;
+  background: #f8f9fa;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+/* Items List */
+.order-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.order-items li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px dashed #ddd;
+  font-size: 1rem;
+}
+.order-items li:last-child {
+  border-bottom: none;
+}
+
+/* Right side (price + quantity) */
+.item-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Price per item */
+.item-price {
+  font-weight: 600;
+  color: #222;
+}
+
+/* Quantity badge */
+.item-qty {
+  background: #ff6a00;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 50px;   /* pill shape */
+  min-width: 32px;
+  text-align: center;
+  box-shadow: 0px 2px 6px rgba(255, 106, 0, 0.4);
+}
+/* Increase card size but keep 3 per row */
+.order-card {
+  min-height: 300px;
+  min-width: 400px;
+}

@@ -1,0 +1,85 @@
+/* Headings inside section */
+.contact-page h1,
+.contact-page h2,
+.contact-page h3{
+  margin-top: 0.2rem !important;
+  margin-bottom: 0.5rem !important;
+   background: linear-gradient(90deg, #ff6a00, #ee0979);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  text-align: center;   /* center heading */
+  margin: 0 auto 25px;  /* keep it centered */
+}
+
+/* Paragraphs inside section */
+.contact-page p {
+  margin-bottom: 0.5rem;
+}
+
+/* Form fields */
+.input-field {
+  margin-bottom: 0.5rem; /* reduce space between fields */
+  padding: 8px 12px;
+}
+
+/* Buttons */
+/* Call Now button (submit-btn) */
+.submit-btn {
+  font-size: 0.8rem;        /* smaller text */
+  padding: 4px 10px;         /* reduce inner spacing */
+  width: auto;               /* let width adjust to content */
+  border-radius: 6px;        /* optional: make it neat */
+}
+
+
+/* Contact info items */
+.contact-info .info-item {
+  margin-bottom: 0.3rem; /* reduce spacing */
+}
+
+/* Social icons */
+.social-icons {
+  margin-top: 0.5rem;
+}
+
+/* Working hours & newsletter */
+.working-hours p,
+.newsletter {
+  margin-bottom: 0.3rem;
+}
+
+/* Testimonial card */
+.testimonial-card p {
+  margin-bottom: 0.3rem;
+}
+
+/* FAQ items */
+.faq-item h5 {
+  margin-bottom: 0.3rem;
+}
+.faq-item p {
+  margin-bottom: 0.3rem;
+}
+
+/* CTA banner */
+.cta-banner h3 {
+  margin-bottom: 0.3rem;
+}
+.cta-banner p {
+  margin-bottom: 0.3rem;
+}
+/* Contact section background */
+.contact-page {
+  min-height: 100vh;  /* full screen height */
+  width: 100%;
+  background: linear-gradient(135deg, #fdfdfd, #dd8bb4); /* soft gradient background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+

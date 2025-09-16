@@ -1,0 +1,179 @@
+/* ============================ */
+/* About Us Page Styles          */
+/* ============================ */
+
+/* Full-page background */
+.containeraboutus{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+.container-fluid-back{
+  background-color: #e2b0c8;
+}
+
+/* ============================ */
+/* Hero Section */
+.aboutus-hero {
+  background: linear-gradient(135deg, #ec995e, #f54499); /* orange to pink gradient */
+  color: #fff;
+  padding: 100px 20px;
+  border-bottom-left-radius: 50% 10%;
+  border-bottom-right-radius: 50% 10%;
+  text-align: center;
+}
+
+.aboutus-hero h1 {
+  font-weight: 800;
+  font-size: 3rem;
+}
+
+.aboutus-hero p {
+  font-size: 1.3rem;
+  margin-top: 10px;
+}
+
+/* ============================ */
+/* About Me & Story Section */
+.container.about-me, .container.py-5.mb-4 {
+  padding: 60px 15px;
+}
+
+.container.about-me img, .container.py-5.mb-4 img {
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.container.about-me h2, .container.py-5.mb-4 h2 {
+  color: #ee0979; /* pink */
+  margin-bottom: 20px;
+}
+
+.container.about-me p, .container.py-5.mb-4 p {
+  color: #555;
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+/* ============================ */
+/* Mission & Values Section */
+.aboutus-section {
+  padding: 60px 20px;
+  background-color: pink;
+}
+
+.aboutus-card {
+  border-radius: 20px;
+  background: linear-gradient(145deg, #fff, #f9f9f9); /* subtle gradient for depth */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease-in-out;
+  padding: 30px;
+  text-align: center;
+}
+
+.aboutus-card:hover {
+  transform: translateY(-5px);
+}
+
+.aboutus-card h4, .aboutus-card h5 {
+  color: #ef904c; /* orange */
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.aboutus-card p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+
+/* ============================ */
+/* Achievements / Stats */
+.aboutus-card h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f665ab; /* pink */
+}
+
+.aboutus-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ============================ */
+/* Call to Action Section */
+.aboutus-cta {
+  background:pink ;
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.aboutus-cta h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.aboutus-cta p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+.aboutus-cta .btn {
+  background: linear-gradient(90deg, #ee0979, #ff6a00); /* pink to orange gradient button */
+  color: #fff;
+  font-weight: 700;
+  padding: 12px 30px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.aboutus-cta .btn:hover {
+  background: linear-gradient(90deg, #fda566, #fd6cb2); /* reverse on hover */
+  color: #fff;
+}
+
+/* ============================ */
+/* Responsive */
+@media (max-width: 768px) {
+  .aboutus-hero {
+    padding: 60px 15px;
+  }
+
+  .aboutus-card {
+    padding: 20px;
+  }
+
+  .aboutus-cta h2 {
+    font-size: 2rem;
+  }
+
+  .aboutus-cta p {
+    font-size: 1rem;
+  }
+}
+/* Gradient title */
+.text-gradient {
+  background: linear-gradient(90deg, #ff6a00, #ee0979);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  text-align: center;   /* center heading */
+  margin: 0 auto 25px;  /* keep it centered */
+}
+.storysection{
+  font-size: 30px;
+  font-family: 'Times New Roman', Times, serif;
+}
+.mysection{
+  font-size: 20px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

@@ -1,0 +1,146 @@
+/* Wrap your Cart component HTML with a parent container class: <div class="cart-container"> ... </div> */
+
+/* ---------- Cart Headings ---------- */
+.cart-container h1 {
+  font-weight: 700;
+  color: #222;
+  -webkit-background-clip: text;  /* Chrome/Safari */
+  background-clip: text;          /* Standard */
+  -webkit-text-fill-color: transparent; /* Safari */
+}
+
+/* ---------- Cart Items ---------- */
+.cart-container .list-group-item {
+  border-radius: 12px;
+  margin-bottom: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cart-container .list-group-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Cart Images */
+.cart-container .list-group-item img {
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* ---------- Cart Buttons ---------- */
+.cart-container button {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.cart-container button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Gradient Style for Action Buttons */
+.cart-container .btn-outline-success {
+  background: linear-gradient(135deg, #4caf50, #81c784);
+  border: none;
+  color: #fff !important;
+  font-weight: 600;
+}
+
+.cart-container .btn-outline-danger {
+  background: linear-gradient(135deg, #f44336, #e57373);
+  border: none;
+  color: #fff !important;
+  font-weight: 600;
+}
+
+.cart-container .btn-primary {
+  background: linear-gradient(135deg, #1976d2, #64b5f6);
+  border: none;
+  font-weight: 600;
+}
+
+.cart-container .btn-success {
+  background: linear-gradient(135deg, #28a745, #7dce82);
+  border: none;
+  font-weight: 600;
+}
+
+.cart-container .btn-info {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  border: none;
+  font-weight: 600;
+  color: #fff !important;
+}
+
+/* ---------- Cart Cards ---------- */
+.cart-container .card {
+  border-radius: 16px;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.cart-container .card:hover {
+  transform: translateY(-5px);
+}
+
+/* Card Title */
+.cart-container .card-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+/* ---------- Cart Input Fields ---------- */
+.cart-container input[type="text"],
+.cart-container input[type="email"] {
+  border: 2px solid #ddd;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.cart-container input[type="text"]:focus,
+.cart-container input[type="email"]:focus {
+  border-color: #0072ff;
+  box-shadow: 0px 0px 6px rgba(0, 114, 255, 0.4);
+  outline: none;
+}
+
+/* ---------- Empty Cart Message ---------- */
+.cart-container .text-muted {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #777 !important;
+}
+
+/* ---------- Responsive (Cart Only) ---------- */
+@media (max-width: 768px) {
+  .cart-container .list-group-item {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .cart-container .list-group-item img {
+    margin-bottom: 12px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .cart-container .btn {
+    margin-top: 5px;
+  }
+
+  .cart-container .card-body {
+    text-align: center;
+  }
+}
+.text-gradient {
+  background: linear-gradient(90deg, #ff6a00, #ee0979);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  text-align: center;   /* center heading */
+  margin: 0 auto 25px;  /* keep it centered */
+}
+

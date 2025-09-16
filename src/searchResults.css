@@ -1,0 +1,52 @@
+/* Container for search results */
+.search-container {
+  margin-top: 100px;
+  padding: 30px;
+}
+
+/* Card styling */
+.search-card {
+  width: 100%;
+  height: 350px; /* fixed card height */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Image container to keep aspect ratio */
+.image-container {
+  width: 100%;
+  height: 200px; /* fixed image height */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f8f8; /* light background for empty space */
+  border-bottom: 1px solid #ddd;
+}
+
+/* Product image */
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* ensures image fits without cropping */
+  transition: transform 0.3s ease;
+}
+
+/* Optional: zoom effect on hover */
+.product-image:hover {
+  transform: scale(1.05);
+}
+
+/* Card title and text */
+.card-body {
+  padding: 10px;
+}
+.card-title {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+.card-text {
+  font-weight: bold;
+  color: #333;
+}

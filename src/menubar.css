@@ -1,0 +1,125 @@
+/* 🔹 Navbar full width + professional gradient */
+.custom-navbar {
+  background: linear-gradient(90deg, #1f1c2c, #928dab); /* Dark Purple → Grayish Lavender */
+  padding: 10px 20px;
+}
+
+/* 🔹 Website title */
+.site-title {
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+.site-title:hover {
+  color: #ffd700;
+}
+
+/* 🔹 Logo image styling */
+.logo-img {
+  border-radius: 12px;                  /* Rounded edges */
+  border: 2px solid #fff;               /* White border */
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  object-fit: cover;
+  background: #fff;
+}
+
+/* 🔹 Search input */
+.search-input {
+  border-radius: 50px;
+  padding: 10px 20px;
+  border: none;
+  background: linear-gradient(135deg, #ffffff, #f3f3f3);
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.15), 0 3px 6px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+.search-input:focus {
+  outline: none;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(255,215,0,0.8);
+}
+
+/* 🔹 Search button */
+.search-btn {
+  border-radius: 50px;
+  background: #ffd700;
+  color: #000;
+  padding: 10px 25px;
+  transition: all 0.3s ease;
+}
+.search-btn:hover {
+  background: #ffb400;
+  color: #fff;
+}
+
+/* 🔹 Nav links (spacing + hover + active) */
+.nav-links .nav-link {
+  color: #f0f0f0 !important;
+  font-weight: 500;
+  margin: 0 18px;   /* spacing between menu items */
+  padding: 8px 15px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 6px;
+}
+
+.nav-links .nav-link:hover {
+  background: rgba(0, 255, 255, 0.2); /* Aqua highlight */
+  color: #00e6e6 !important;
+  transform: translateY(-2px);
+}
+
+.nav-links .nav-link.active {
+  background: linear-gradient(90deg, #00c6ff, #0072ff); /* Blue gradient */
+  color: #fff !important;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+/* 🔹 Brand style */
+.custom-navbar .navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00e6e6 !important; /* standout aqua brand */
+}
+
+/* 🔹 Cart button with gradient */
+.custom-navbar .btn-warning {
+  background: linear-gradient(45deg, #ffb347, #ffcc33); /* Warm Yellow → Golden */
+  border: none;
+  color: #000;
+  transition: 0.3s;
+}
+.custom-navbar .btn-warning:hover {
+  background: linear-gradient(45deg, #ffcc33, #ffb347);
+  transform: scale(1.05);
+}
+
+/* 🔹 Signup button hover */
+.signup-btn, .cart-btn {
+  transition: all 0.3s ease;
+}
+.signup-btn:hover {
+  background-color: #28a745cc !important;
+}
+.cart-btn:hover {
+  background-color: #ffc107cc !important;
+}
+
+/* 🔹 Force all main page containers to use full width */
+.container {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* 🔹 Responsive search bar */
+@media (max-width: 992px) {
+  .search-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .search-input {
+    margin-bottom: 10px;
+  }
+}
+

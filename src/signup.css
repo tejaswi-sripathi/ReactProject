@@ -1,0 +1,35 @@
+/* Full-page background */
+.signup-page {
+  height: 100;
+  width: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left:560px;
+}
+
+/* Card styling */
+.signup-card {
+  width: 380px;
+  border-radius: 15px;
+  background: #b8e2e9;
+}
+
+/* Input styling */
+.signup-card .form-control {
+  height: 45px;
+  border-radius: 8px;
+}
+
+/* Button styling */
+.signup-card .btn-primary {
+ background: linear-gradient(90deg, #ff6a00, #ee0979);
+  border: none;
+  height: 45px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.signup-card .btn-primary:hover {
+  background:linear-gradient(90deg, #ff6a00, #ee0979); 
+}

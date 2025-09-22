@@ -116,7 +116,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(to right, #fdfbfb, #ebedee);
+  background-color: rgb(207, 240, 241);
   background-image: url("/carouselimages/farm-bg.jpg");
   background-size: cover;
   background-attachment: fixed;

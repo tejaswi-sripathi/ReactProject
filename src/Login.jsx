@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "./store"; // Redux action
 import './login.css';
 
-function Login() {
+const Login = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const navigate = useNavigate();
@@ -25,51 +25,56 @@ function Login() {
 
     // Find user
     const matchedUser = users.find(
-            u => (u.email === email || u.username === email) && u.password === password
-         );
-
+      u => (u.email === email || u.username === email) && u.password === password
+    );
 
     if (matchedUser) {
-      dispatch(loginUser({ username: email, password })); // update Redux + localStorage
-      navigate("/"); // redirect to home
+      // ✅ Update Redux state
+      dispatch(loginUser({ username: email, password }));
+
+      // ✅ Save login flag in localStorage
+      localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("loggedInUser", email);
+
+      navigate("/cart"); // redirect to cart after login
     } else {
       setError("Invalid email or password. Please sign up if you don't have an account.");
     }
   };
 
   return (
-    <>
-    <div className=" login-page">
+    <div className="login-page">
       <div className="login-card">
         <h2 className="login-title">Login</h2>
         {error && <p className="error-text">{error}</p>}
 
         <form onSubmit={handleLogin}>
-         <input
-             type="email"
-             ref={emailRef}
+          <input
+            type="email"
+            ref={emailRef}
             className="input-field"
-             placeholder="Email"
-             onChange={() => setError("")}  //to disapper error messages
-             />
-           <input
-             type="password"
-              ref={passwordRef}
-              className="input-field"
-              placeholder="Password"
-              onChange={() => setError("")}  //to disapper error messages
-                   />
+            placeholder="Email"
+            onChange={() => setError("")} // clear error while typing
+          />
+          <input
+            type="password"
+            ref={passwordRef}
+            className="input-field"
+            placeholder="Password"
+            onChange={() => setError("")} // clear error while typing
+          />
 
           <button type="submit" className="submit-btn">Login</button>
         </form>
 
         <p className="login-footer">
-          Don't have an account? <Link to="/signup" className="signup-link">Sign Up</Link>
+          Don't have an account?{" "}
+          <Link to="/signup" className="signup-link">Sign Up</Link>
         </p>
       </div>
     </div>
-     </>
   );
-}
+};
 
+// ✅ Default export
 export default Login;

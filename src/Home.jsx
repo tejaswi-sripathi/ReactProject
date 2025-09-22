@@ -134,7 +134,6 @@ export default function Home() {
                 <li><a href="/" className="footer-link">Home</a></li>
                 <li><a href="/aboutus" className="footer-link">About Us</a></li>
                 <li><a href="/contactus" className="footer-link">Contact</a></li>
-                <li><a href="/privacy" className="footer-link">Privacy Policy</a></li>
               </ul>
             </div>
             <div className="col-md-4 mb-4">

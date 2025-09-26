@@ -55,8 +55,8 @@
 .nav-links .nav-link {
   color: #f0f0f0 !important;
   font-weight: 500;
-  margin: 0 18px;   /* spacing between menu items */
-  padding: 8px 15px;
+  margin: 0 10px;   /* spacing between menu items */
+  padding: 8px 10px;
   transition: all 0.3s ease-in-out;
   border-radius: 6px;
 }
@@ -123,3 +123,49 @@
   }
 }
 
+/* Default: hidden for small screens */
+.navbar-collapse {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+/* Show menu when toggled (small screens) */
+.navbar-collapse.show {
+  max-height: 500px; /* enough to show all links */
+}
+
+/* Hamburger toggle button only on small screens */
+.menu-toggle {
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Nav links layout */
+.nav-links {
+  display: flex;
+  flex-direction: row; /* Desktop default */
+  gap: 20px;
+}
+
+/* Mobile: vertical layout and collapse toggle */
+@media (max-width: 992px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Show collapsed menu when toggled */
+  .navbar-collapse.show {
+    max-height: 500px; 
+  }
+}
+
+/* Desktop: always show menu */
+@media (min-width: 992px) {
+  .navbar-collapse {
+    display: flex !important;
+    max-height: none !important;
+  }
+}

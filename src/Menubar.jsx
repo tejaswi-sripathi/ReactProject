@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter, Routes, Route, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { logoutUser } from "./store"; // Redux action to logout
+import { logoutUser } from "./store";
 
 import Home from "./Home";
 import Veg from "./Veg";
@@ -16,17 +16,17 @@ import Nutsseeds from "./Nutsseeds";
 import Login from "./Login";
 import SearchResults from "./SearchResults";
 import SignUp from "./SignUp";
+import Aboutus from "./Aboutus";
 
 import "./menubar.css";
-import Aboutus from "./Aboutus";
 
 function Navbar() {
   const cartItems = useSelector((state) => state.cart);
   const cartItemCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
-
   const { isAuthenticated, currentUser } = useSelector((state) => state.userAuth);
 
   const [searchBar, setSearchBar] = useState("");
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // Toggle state
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -34,24 +34,36 @@ function Navbar() {
     e.preventDefault();
     if (searchBar.trim() !== "") {
       navigate(`/search?q=${encodeURIComponent(searchBar.trim())}`);
-      setSearchBar(""); // Clear input after search
+      setSearchBar(""); 
+      setIsMenuOpen(false);
     }
   };
 
   const handleLogout = () => {
     dispatch(logoutUser());
     navigate("/login");
+    setIsMenuOpen(false);
   };
 
   return (
-    <nav className="navbar navbar-expand-lg custom-navbar fixed-top shadow-lg">
+    <nav className="navbar custom-navbar fixed-top shadow-lg">
       <div className="container-fluid flex-column">
+        {/* Top bar: logo, hamburger, search, auth/cart */}
         <div className="d-flex flex-wrap justify-content-between align-items-center w-100 py-2">
+          {/* Logo */}
           <NavLink className="navbar-brand text-light fw-bold d-flex align-items-center me-3" to="/">
             <span className="fs-3 site-title">
               <img src="/Images/logoes.png" alt="logo" height="50px" width="50px" />FarmToHome
             </span>
           </NavLink>
+
+          {/* Hamburger button only on small screens */}
+          <div
+            className="menu-toggle d-lg-none text-light"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? "×" : "☰"}
+          </div>
 
           {/* Search bar */}
           <form
@@ -69,7 +81,7 @@ function Navbar() {
             <button className="btn fw-bold search-btn" type="submit">Search</button>
           </form>
 
-          {/* Login / Logout / Signup / Cart buttons */}
+          {/* Auth / Cart buttons */}
           <div className="d-flex align-items-center mt-2 mt-lg-0">
             {isAuthenticated ? (
               <>
@@ -90,9 +102,9 @@ function Navbar() {
           </div>
         </div>
 
-        {/* Nav links */}
-        <div className="collapse navbar-collapse w-100" id="navbarNav">
-          <ul className="navbar-nav mx-auto mb-2 mb-lg-0 nav-links">
+        {/* Navigation Links */}
+        <div className={`navbar-collapse w-100 ${isMenuOpen ? "show" : ""}`}>
+          <ul className="navbar-nav mx-auto mb-2 mb-lg-0 nav-links d-flex flex-lg-row flex-column">
             <li className="nav-item"><NavLink className="nav-link" to="/">🏠 Home</NavLink></li>
             <li className="nav-item"><NavLink className="nav-link" to="/veg">🥕 Veg Items</NavLink></li>
             <li className="nav-item"><NavLink className="nav-link" to="/meatandseafood">🥩 Meat & SeaFood</NavLink></li>
@@ -111,7 +123,6 @@ function Navbar() {
 
 function AppRoutes() {
   const location = useLocation();
-
   const isNotFound = ![
     "/", "/veg", "/meatandseafood", "/dairyproducts", "/fruits",
     "/nutsandseeds", "/cart", "/orders", "/aboutus", "/contactus", "/login", "/signup", "/search"
@@ -120,7 +131,6 @@ function AppRoutes() {
   return (
     <>
       {!isNotFound && <Navbar />}
-
       <div style={{ marginTop: isNotFound ? "0px" : "160px" }}>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -131,10 +141,10 @@ function AppRoutes() {
           <Route path="/nutsandseeds" element={<Nutsseeds />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/orders" element={<Orders />} />
-          <Route path="/aboutus" element={<Aboutus/>} />
+          <Route path="/aboutus" element={<Aboutus />} />
           <Route path="/contactus" element={<Contact />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp/>} />
+          <Route path="/signup" element={<SignUp />} />
           <Route path="/search" element={<SearchResults />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

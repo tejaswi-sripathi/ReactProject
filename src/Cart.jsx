@@ -319,7 +319,7 @@ const Cart = () => {
                   <div className="text-center mt-3">
                     <h4>Scan UPI QR to pay ₹{finalPrice}</h4>
                     <QRCode
-                      value={`upi://pay?pa=tejaswisripathi@okhdfcbank&pn=Teju&cu=INR&am=${finalPrice}`}
+                      value={`upi://pay?pa=tejaswisripathi2004@okhdfcbank&pn=Teju&cu=INR&am=${finalPrice}`}
                     />
                   </div>
                 )}

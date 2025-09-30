@@ -10,7 +10,7 @@ function  MeatSeafood() {
   let nonVegProducts = useSelector((globalState) => globalState.products.nonveg);
   let dispatch = useDispatch();
 
-  let productsperpage = 4;
+  let productsperpage = 6;
   const [currentPage, setCurrentPage] = useState(1);
   const indexOfLastProduct = currentPage * productsperpage;
   const indexOfFirstProduct = indexOfLastProduct - productsperpage;
@@ -27,7 +27,7 @@ function  MeatSeafood() {
 
         <div className="row">
           {currentProducts.map((product) => (
-            <div className="col-md-3 mb-3" key={product.id}>
+            <div className="col-sm-4 mb-3" key={product.id}>
               <div className="item-card">
                 <img
                   src={product.imageurl}

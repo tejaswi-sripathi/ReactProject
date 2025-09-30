@@ -85,8 +85,9 @@ nutsandseeds: [
              { id: 26, name: "Brazil Nuts", price: 150, imageurl: 'https://palmtreeshopping.com/cdn/shop/files/BRAZIL-NUTS-THUMBNAIL.png?v=1735783301&width=480', description: "Rich Source of Selenium, supports thyroid Health" } 
             ],
     },
-     reducers: {}
+     reducers: {}  //empty reducer
      });
+     
  // ✅ Cart slice with persistence 
    const loadCart = () => { 
     try {
@@ -98,11 +99,12 @@ nutsandseeds: [
         return [];
        } 
       };
-       const cartSlice = createSlice(
+      //cart slice creation
+const cartSlice = createSlice(
         { name: "cart",
            initialState: loadCart(), 
            reducers:{ 
-              addToCart(state, action)
+              addToCart(state, action)   //add to cart reducer
                { 
                 let item = state.find(item => item.id === action.payload.id);
                  if (item) 
@@ -112,8 +114,9 @@ nutsandseeds: [
                       else { 
                         state.push({ ...action.payload, quantity: 1 });
                        }
-           localStorage.setItem("cart", JSON.stringify(state)); 
+           localStorage.setItem("cart", JSON.stringify(state));     //setting cart items to localstorage
           },
+          //remove items from cart
            RemoveFromCart(state, action) 
            {
              let index = state.findIndex(item => item.id === action.payload.id); 
@@ -121,19 +124,22 @@ nutsandseeds: [
                { 
                 state.splice(index, 1);
                 } 
-    localStorage.setItem("cart", JSON.stringify(state));
+    localStorage.setItem("cart", JSON.stringify(state));  //setting cart items to localstorage
    }, 
+   //clearing the cart and make it empty
    clearCart() 
    { 
     localStorage.removeItem("cart");
      return []; 
     },
+    //increasing the quantity  of cart items
      increaseQuantity(state, action)
       { 
         let item = state.find(item => item.id === action.payload.id);
          if (item) item.quantity += 1;
           localStorage.setItem("cart", JSON.stringify(state));
          },
+         //decrese the quantity of cart items
           decreaseQuantity(state, action)
            { 
             let item = state.find(item => item.id === action.payload.id);
@@ -145,7 +151,7 @@ nutsandseeds: [
               { 
                 let index = state.findIndex(item => item.id === action.payload.id); 
           if (index !== -1) 
-            state.splice(index, 1);
+            state.splice(index, 1);   //removing the item
            } 
            localStorage.setItem("cart", JSON.stringify(state)); 
           }

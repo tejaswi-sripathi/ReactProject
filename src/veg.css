@@ -4,11 +4,12 @@
   background-color: #f8fff2;  /* light fresh green background */
   border: 2px solid #a3d977;  /* soft green border */
   border-radius: 16px;
-  padding: 20px;
+  padding: 10px;
+  margin: 30px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
-  color: #2c3e2c; /* dark greenish text */
+
 }
 
 /* Hover effect */
@@ -34,12 +35,11 @@
   font-size: 25px;
   font-weight: 600;
   color: #610659; /* purple */
-  margin: 10px 0;
 }
 
 /* Description */
 .item-desc {
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family:Georgia, 'Times New Roman', Times, serif;
   font-size:18px;
   color: #288895;
   line-height: 1.5;
@@ -53,7 +53,6 @@
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 1.2rem;
   font-weight: 700;
-  font-style: italic;
   color: #79031d;
   margin-bottom: 15px;
 }
@@ -62,7 +61,6 @@
 .add-btn {
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   background: linear-gradient(90deg, #28a745, #218838);
-  border: none;
   border-radius: 8px;
   padding: 10px 18px;
   font-size: 1rem;
@@ -74,18 +72,16 @@
   transition: all 0.3s ease-in-out;
 }
 .add-btn:hover {
-  background: linear-gradient(90deg, #0c631f, #1c7430);
+  background: linear-gradient(90deg, #0c631f, #06d436);
   transform: translateY(-3px);
   box-shadow: 0 6px 12px rgba(42, 85, 51, 0.3);
 }
 /* Apply to full Veg page */
 .itemsfullpage {
-  box-shadow: inset 0 0 50px rgba(255, 200, 150, 0.3);
-  background-color: rgb(240, 184, 217);
-  padding-left:50px;
-  padding-right:50px;
-
+  padding-left:100px;
+  padding-right:100px;
 }
+
 /* Gradient title */
 .text-gradient {
   background: linear-gradient(90deg, #ff6a00, #ee0979);

@@ -10,7 +10,7 @@ function Veg() {
   let vegProducts = useSelector((globalState) => globalState.products.veg);
   let dispatch = useDispatch();
 
-  let productsperpage = 4;
+  let productsperpage = 6;
   const [currentPage, setCurrentPage] = useState(1);
   const indexOfLastProduct = currentPage * productsperpage;
   const indexOfFirstProduct = indexOfLastProduct - productsperpage;
@@ -27,7 +27,7 @@ function Veg() {
 
         <div className="row">
           {currentProducts.map((product) => (
-            <div className="col-md-3 mb-3" key={product.id}>
+            <div className="col-sm-4 mb-3" key={product.id}>
               <div className="item-card">
                 <img
                   src={product.imageurl}
@@ -58,17 +58,17 @@ function Veg() {
         </div>
 
         {/* Pagination */}
-        <div className="d-flex justify-content-center mt-3">
+        <div className="d-sm-flex justify-content-center mt-3">
           <nav>
             <ul className="pagination">
               <button
                 className="btn btn-primary mx-2"
-                onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))} //the page shouldn't go below 1
                 disabled={currentPage === 1}
               >
                 Previous
               </button>
-
+               {/* to create an array structure for index */}
               {Array.from(
                 { length: Math.ceil(vegProducts.length / productsperpage) },
                 (_, index) => (
